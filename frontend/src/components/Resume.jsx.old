@@ -4,8 +4,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { confirmCheckout } from "../services/checkoutService";
 import "./Resume.css";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
-
 const Resume = () => {
   const { items, shippingCost, clear } = useCart();
   const [paymentConfirmed, setPaymentConfirmed] = useState(false);
@@ -155,7 +153,7 @@ const Resume = () => {
             src={
               item.thumbnail?.startsWith("http")
                 ? item.thumbnail
-                : `${API_URL}/${item.thumbnail}`
+                : `http://localhost:3000/${item.thumbnail}`
             }
             alt={item.name || item.nombre}
           />

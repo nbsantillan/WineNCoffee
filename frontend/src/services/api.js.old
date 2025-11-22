@@ -1,10 +1,12 @@
 import axios from "axios";
+//para rutas que usan api
+//const api = axios.create({
+//  baseURL: "http://localhost:5000/api" //ruta vieja no se si se usa pero la dejamos
+//});
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
-
-// Cliente Axios central para el backend
+//para rutas directas al backend por ejemplo metrics
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: "http://localhost:3000" //backend por defecto
 });
 
 // Adjuntar token si existe
